@@ -32,6 +32,7 @@ def criar_tabela():
             autor VARCHAR(100) NOT NULL,
             url_post VARCHAR(255) UNIQUE,
             data_coleta DATETIME NOT NULL,
+            data_postagem DATETIME,
             tags TEXT,
             reacoes INT DEFAULT 0,
             comentarios INT DEFAULT 0
@@ -40,7 +41,7 @@ def criar_tabela():
     conn.commit()
     conn.close()
 
-def inserir_post(titulo, autor, tags, reacoes, comentarios, url_post, data_coleta):
+def inserir_post(titulo, autor, tags, reacoes, comentarios, url_post, data_coleta, data_postagem):
     conn = conectar_db()
     if conn is None:
         return
@@ -48,9 +49,9 @@ def inserir_post(titulo, autor, tags, reacoes, comentarios, url_post, data_colet
 
     try:
         cursor.execute('''
-            INSERT INTO posts (titulo, autor, tags, reacoes, comentarios, url_post, data_coleta)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
-        ''', (titulo, autor, tags, reacoes, comentarios, url_post, data_coleta))
+            INSERT INTO posts (titulo, autor, tags, reacoes, comentarios, url_post, data_coleta, data_postagem)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        ''', (titulo, autor, tags, reacoes, comentarios, url_post, data_coleta, data_postagem))
         conn.commit()
         return True
 

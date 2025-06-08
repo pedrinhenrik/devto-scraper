@@ -69,6 +69,20 @@ def extrair_posts():
                         comentarios = int(texto)
                         break
 
+        # Pega a data de postagem
+        data_postagem_tag = article.find('time')
+        if data_postagem_tag:
+            iso_data = data_postagem_tag['datetime']
+            try:
+                # Remove o 'Z' e converte para datetime
+                dt = datetime.strptime(iso_data.replace('Z', ''), '%Y-%m-%dT%H:%M:%S')
+                data_postagem = dt.strftime('%Y-%m-%d %H:%M:%S')
+            except Exception:
+                data_postagem = None
+        else:
+            data_postagem = None
+
+
         # Define hora atual e data no formato
         data_coleta = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
@@ -80,7 +94,8 @@ def extrair_posts():
             'reacoes': reacoes,
             'comentarios': comentarios,
             'url_post': url_post,
-            'data_coleta': data_coleta
+            'data_coleta': data_coleta,
+            'data_publicacao': data_postagem,
             })
 
     # Retorna a lista de posts

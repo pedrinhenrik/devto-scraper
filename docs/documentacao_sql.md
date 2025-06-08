@@ -37,5 +37,6 @@ CREATE TABLE IF NOT EXISTS posts (
     data_coleta DATETIME,
     tags TEXT,
     reacoes INT DEFAULT 0,
-    comentarios INT DEFAULT 0
+    comentarios INT DEFAULT 0,
+    data_postagem DATETIME
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

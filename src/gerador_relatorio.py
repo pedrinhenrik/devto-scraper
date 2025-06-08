@@ -175,5 +175,5 @@ def gerar_relatorio_excel():
 
     # Salva o arquivo Excel final
     wb.save(arquivo_excel)
-
+    
     print(f"✅ Relatório gerado: {arquivo_excel}")
