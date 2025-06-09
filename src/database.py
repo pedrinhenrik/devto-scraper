@@ -55,8 +55,9 @@ def inserir_post(titulo, autor, tags, reacoes, comentarios, url_post, data_colet
         conn.commit()
         return True
 
+    # Código de erro para entrada duplicada
     except Error as e:
-        if e.errno == 1062:  # Código de erro para entrada duplicada
+        if e.errno == 1062:  
              print(f"🔁 Post já existente no banco (duplicado): {url_post}")
              return False
         else:
