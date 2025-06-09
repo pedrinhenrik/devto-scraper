@@ -113,10 +113,12 @@ O que acontece automaticamente:
 ✅ Criação de Tabela no MySQL se ainda não existir  
 ✅ Scraping de Posts do DEV.to  
 ✅ Armazenamento no banco (sem duplicados)  
-✅ Geração de Relatório em Excel com dados organizados  
+✅ Geração de Relatório em Excel com dados organizados 
+✅ Geração de Dashboard interativo 
 ✅ Gráficos salvos em PNG:
 - Top 10 autores por número de posts
 - Top 10 posts por reações
+- Tags mais usadas
 
 Em seguida:
 
