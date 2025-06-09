@@ -125,14 +125,6 @@ Em seguida:
 ✅ O navegador será aberto para o X (Twitter) em [https://x.com/compose/post](https://x.com/compose/post)  
 ✅ Você faz o login manualmente (por segurança, não guardamos senha!)  
 ✅ O link é preenchido automaticamente.  
-✅ Você verá uma opção:
-
-```bash
-Digite:
-1 - Para Postar automaticamente
-2 - Apenas gerar o print sem postar
-```
-
 ✅ Um screenshot da prévia da postagem é gerado e salvo em `relatorios/preview_tweet.png`.
 
 ---
