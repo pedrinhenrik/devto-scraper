@@ -164,9 +164,11 @@ Contém:
 ## 🚀 Melhorias Futuras
 
 - Automatizar login via cookies/session.
-- Postagem com imagens customizadas.
-- Melhor tratamento de erros durante scraping/postagem.
-- Geração de Wordcloud com tags mais usadas.
+- Detecção de Tendências: Treinar modelos para identificar padrões de crescimento em reações, comentários e tags, sugerindo os temas mais promissores.
+- Recomendação Inteligente de Tags: Criar um sistema de recomendação automática de tags usando algoritmos de Machine Learning como TF-IDF ou Word2Vec.
+- Clusterização de Autores: Usar técnicas de clusterização (K-Means, DBSCAN) para agrupar autores com estilos de posts similares.
+- Dashboard Inteligente: Incorporar filtros e recomendações automáticas no Dash, guiadas por modelos de aprendizado de máquina para personalizar as visualizações.
+- Gerador de Relatórios Inteligentes: Geração automática de relatórios semanais/mensais com análises preditivas e insights usando IA.
 
 ---
 
