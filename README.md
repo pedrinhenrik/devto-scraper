@@ -102,7 +102,7 @@ DB_NAME = "nome_do_banco"
 
 ## 📝 Como Usar
 [📖 Manual de Uso](docs/manual_uso.md)
-Execute o script principal:
+- Execute o script principal:
 
 ```bash
 python main.py
