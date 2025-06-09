@@ -7,6 +7,7 @@ Este projeto foi desenvolvido para:
 - Realizar o scraping de posts da página inicial do Dev.to.
 - Persistir os dados coletados em um banco de dados MySQL.
 - Gerar relatórios automáticos no formato Excel, com gráficos de análise.
+- Gerar relatório em Dashboard interativo.
 - Automatizar a preparação de posts para publicação na plataforma X (Twitter), incluindo captura de print da prévia do post.
 
 ---
