@@ -12,12 +12,10 @@ def extrair_posts():
     
     soup = BeautifulSoup(response.text, 'lxml')
 
-    # Inicializa uma lista para armazenar os posts
     posts = []
 
-    # Loop para encontrar todos os blocos de post
+    # Loop para encontrar todos os blocos de posts
     articles = soup.find_all('div', class_='crayons-story')
-
 
     # Loop por todas as tags de post da página
     for article in articles:
@@ -59,13 +57,13 @@ def extrair_posts():
 
         # Número de comentários
         comentarios_tag = article.find('a', href=lambda href: href and '#comments' in href)
-        comentarios = None  # Padrão: None para virar NULL no banco
+        comentarios = None
 
         if comentarios_tag:
             for child in comentarios_tag.children:
                 if isinstance(child, str):
                     texto = child.strip()
-                    if texto.isdigit():  # Se encontrar número
+                    if texto.isdigit():
                         comentarios = int(texto)
                         break
 
@@ -74,14 +72,13 @@ def extrair_posts():
         if data_postagem_tag:
             iso_data = data_postagem_tag['datetime']
             try:
-                # Remove o 'Z' e converte para datetime
+                # Remove o 'Z' e converte para datetime para evitar problemas no Sql de formatação
                 dt = datetime.strptime(iso_data.replace('Z', ''), '%Y-%m-%dT%H:%M:%S')
                 data_postagem = dt.strftime('%Y-%m-%d %H:%M:%S')
             except Exception:
                 data_postagem = None
         else:
             data_postagem = None
-
 
         # Define hora atual e data no formato
         data_coleta = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -98,5 +95,4 @@ def extrair_posts():
             'data_publicacao': data_postagem,
             })
 
-    # Retorna a lista de posts
     return posts
